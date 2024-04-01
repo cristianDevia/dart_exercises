@@ -1,5 +1,10 @@
 import 'package:weinflu_exercises/weinflu_exercises.dart' as weinflu_exercises;
 
 void main(List<String> arguments) {
+  print(
+      "---------------------------------- Exercise 1 ----------------------------------");
   weinflu_exercises.exercise1();
+  print(
+      "---------------------------------- Exercise 2 ----------------------------------");
+  weinflu_exercises.exercise2();
 }
