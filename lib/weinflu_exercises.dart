@@ -9,7 +9,7 @@ void exercise1() {
    * con sus respectivos mensajes: “La edad mayor es: ” , “La edad menor es: ”, “La edad promedio es: ”
    */
 
-  var ages = [33, 15, 27, 40, 22, 19, 32, 76, 45];
+  List<int> ages = [33, 15, 27, 40, 22, 19, 32, 76, 45];
   print("La edad mayor es: ${ages.reduce(max)}");
   print("La edad menor es: ${ages.reduce(min)}");
   print(
@@ -40,7 +40,7 @@ void exercise2() {
 
   const int copExchange = 4773;
   const double eurExchange = 0.92;
-  var usdList = [20000, 30000, 4000, 2500, 1000, 7600];
+  List<int> usdList = [20000, 30000, 4000, 2500, 1000, 7600];
   const acceptableValues = ["C", "D", "E"];
   bool correctLetter = false;
   bool acceptedIncome = false;
@@ -120,11 +120,11 @@ void exercise3() {
    * Dada una lista de Nombres, mostrar en pantalla la cantidad de letras y si esa cantidad es par o impar
    */
   List<String> names = ["Cristian", "Daniel", "Sandra", "Paola"];
-  for (var i = 0; i < names.length; i++) {
-    String name = names[i];
-    int nameLength = name.length;
+  for (var name in names) {
+    String actualName = name;
+    int nameLength = actualName.length;
     print(
-        "Nombre: $name - Cantidad de letras: $nameLength - ${nameLength % 2 == 0 ? "par" : "impar"} ");
+        "Nombre: $actualName - Cantidad de letras: $nameLength - ${nameLength % 2 == 0 ? "par" : "impar"} ");
   }
 }
 
@@ -194,14 +194,14 @@ void exercise4() {
    */
 
   var newDoctor = Doctor("123", "Cristian", 26, "Cardiologo");
-  newDoctor.speak("Hola soy el doctor Cristian");
+  newDoctor.speak("Hola, soy el doctor Cristian");
   newDoctor.disease("hipertension");
   print(
       "--------------------------------------------------------------------------------------");
 
   var newNutritionist = Nutritionist("456", "Daniel", 30, "Cambridge");
   newNutritionist.speak(
-      "Hola soy el nutricionista Daniel, necesito su estatura en CM y su peso en KG");
+      "Hola, soy el nutricionista Daniel, necesito su estatura en metros y su peso en KG");
   var bodyMassIndex = newNutritionist.bodyMassIndex(47, 1.65);
   print("Su indice de masa corporal es: $bodyMassIndex");
   print(
@@ -210,4 +210,6 @@ void exercise4() {
   var newLawyer = Lawyer("789", "Paola", 25, "Harvard", "Derecho de familia");
   newLawyer.speak("Hola, mi nombre es Paola y soy abogada de familia");
   newLawyer.work("Luis", "Divorcio");
+  print(
+      "--------------------------------------------------------------------------------------");
 }
