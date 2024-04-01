@@ -114,3 +114,16 @@ void exercise2() {
     }
   }
 }
+
+void exercise3() {
+  /**
+   * Dada una lista de Nombres, mostrar en pantalla la cantidad de letras y si esa cantidad es par o impar
+   */
+  List<String> names = ["Cristian", "Daniel", "Sandra", "Paola"];
+  for (var i = 0; i < names.length; i++) {
+    String name = names[i];
+    int nameLength = name.length;
+    print(
+        "Nombre: $name - Cantidad de letras: $nameLength - ${nameLength % 2 == 0 ? "par" : "impar"} ");
+  }
+}

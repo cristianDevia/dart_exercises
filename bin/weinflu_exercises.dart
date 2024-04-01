@@ -7,4 +7,7 @@ void main(List<String> arguments) {
   print(
       "---------------------------------- Exercise 2 ----------------------------------");
   weinflu_exercises.exercise2();
+  print(
+      "---------------------------------- Exercise 3 ----------------------------------");
+  weinflu_exercises.exercise3();
 }
