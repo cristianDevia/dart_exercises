@@ -127,3 +127,87 @@ void exercise3() {
         "Nombre: $name - Cantidad de letras: $nameLength - ${nameLength % 2 == 0 ? "par" : "impar"} ");
   }
 }
+
+abstract class Person {
+  final String id;
+  final String name;
+  final int age;
+
+  Person(this.id, this.name, this.age);
+
+  void speak(String pMessage) {
+    print(pMessage);
+  }
+
+  void walk(int pSteps) {
+    if (pSteps > 1) {
+      print("He dado $pSteps pasos");
+    } else if (pSteps == 1) {
+      print("He dado $pSteps paso");
+    }
+  }
+}
+
+class Doctor extends Person {
+  final String specialty;
+
+  Doctor(super.id, super.name, super.age, this.specialty);
+
+  void disease(String pDisease) {
+    print("Procedo a tratar su enfermedad de $pDisease");
+  }
+}
+
+class Nutritionist extends Person {
+  final String university;
+
+  Nutritionist(super.id, super.name, super.age, this.university);
+
+  String bodyMassIndex(double pMass, double pBody) {
+    return ((pMass) / pow(pBody, 2)).toStringAsFixed(2);
+  }
+}
+
+class Lawyer extends Person {
+  final String university;
+  final String specialty;
+
+  Lawyer(super.id, super.name, super.age, this.university, this.specialty);
+
+  void work(String pName, String pCase) {
+    print("procedo a representar al cliente $pName en el caso $pCase");
+  }
+}
+
+void exercise4() {
+  /**
+   * Cree las siguientes clases y un objeto a partir de las misma que ejecute todas las acciones incluidas las de su padre:
+   * 1. Cree la clase Persona con id, nombre, edad y cree la función hablar la cual dado mensaje
+   * se muestra en pantalla y cree la clase caminar que dado una cantidad de pasos muestra en
+   * pantalla cuanto ha caminado (por ejemplo si se ingresa 3 mostrará en pantalla he dado 1 paso, 2 pasos, 3 pasos).
+   * 2. Herede la clase Persona y cree la clase Doctor el cual tendrá el nuevo atributo de
+   * especialidad y podrá ejecutar una nueva función, la cual es dado una enfermedad muestre en pantalla: procedo a tratar dicha enfermedad
+   * 3. Herede la clase Persona y cree la clase Nutricionista y cree un atributo que se refiera a la
+   * universidad en la que fue egresado. También una función que devuelva el IMC dado el peso y altura de un paciente
+   * 4. Herede la clase Persona y cree la clase Abogado adicione dos atributos uno asociado a su especialidad y el otro a la universidad de la que egresó. 
+   * Finalmente cree la función que dado un nombre y el caso de cliente el abogado diga : procedo a representar al cliente {nombre} en el caso {caso}
+   */
+
+  var newDoctor = Doctor("123", "Cristian", 26, "Cardiologo");
+  newDoctor.speak("Hola soy el doctor Cristian");
+  newDoctor.disease("hipertension");
+  print(
+      "--------------------------------------------------------------------------------------");
+
+  var newNutritionist = Nutritionist("456", "Daniel", 30, "Cambridge");
+  newNutritionist.speak(
+      "Hola soy el nutricionista Daniel, necesito su estatura en CM y su peso en KG");
+  var bodyMassIndex = newNutritionist.bodyMassIndex(47, 1.65);
+  print("Su indice de masa corporal es: $bodyMassIndex");
+  print(
+      "--------------------------------------------------------------------------------------");
+
+  var newLawyer = Lawyer("789", "Paola", 25, "Harvard", "Derecho de familia");
+  newLawyer.speak("Hola, mi nombre es Paola y soy abogada de familia");
+  newLawyer.work("Luis", "Divorcio");
+}

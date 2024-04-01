@@ -10,4 +10,7 @@ void main(List<String> arguments) {
   print(
       "---------------------------------- Exercise 3 ----------------------------------");
   weinflu_exercises.exercise3();
+  print(
+      "---------------------------------- Exercise 4 ----------------------------------");
+  weinflu_exercises.exercise4();
 }
